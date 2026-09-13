@@ -8,9 +8,9 @@ os.makedirs('Data', exist_ok=True)
 
 app = FastAPI()
 
-@app.get('/health/live')
-async def liveness():
-    return {"status": "alive"}
+@app.get('/')
+async def root():
+    return {"status": "ok"}
 
 @app.put('/')
 async def main(request: Request):
