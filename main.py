@@ -9,7 +9,7 @@ app = FastAPI()
 @app.get('/')
 async def root():
     os.makedirs('Data', exist_ok=True)
-    return Response(status_code=200)
+    return {"status": "ok"}
 
 @app.get('/health')
 async def health():
