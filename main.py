@@ -2,7 +2,7 @@ import os
 from hmac import compare_digest
 from fastapi import FastAPI, HTTPException, Request, Response
 
-API_TOKEN = os.environ('API_TOKEN')
+API_TOKEN = os.environ['API_TOKEN']
 
 os.makedirs('Data', exist_ok=True)
 
