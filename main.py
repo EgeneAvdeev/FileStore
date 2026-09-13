@@ -8,6 +8,10 @@ os.makedirs('Data', exist_ok=True)
 
 app = FastAPI()
 
+@app.get('/health/live')
+async def liveness():
+    return {"status": "alive"}
+
 @app.put('/')
 async def main(request: Request):
     header = request.headers.get('Authorization', '')
