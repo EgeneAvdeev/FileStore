@@ -4,13 +4,16 @@ from fastapi import FastAPI, HTTPException, Request, Response
 
 API_TOKEN = os.environ['API_TOKEN']
 
-os.makedirs('Data', exist_ok=True)
-
 app = FastAPI()
 
 @app.get('/')
 async def root():
+    os.makedirs('Data', exist_ok=True)
     return Response(status_code=200)
+
+@app.get('/health')
+async def health():
+    return {"status": "healthy"}
 
 @app.head('/')
 async def check_app():
