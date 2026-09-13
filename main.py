@@ -8,6 +8,10 @@ os.makedirs('Data', exist_ok=True)
 
 app = FastAPI()
 
+@app.get('/')
+async def root():
+    return Response(status_code=200)
+
 @app.head('/')
 async def check_app():
     return Response(status_code=200)
